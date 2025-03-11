@@ -6,33 +6,53 @@
     <title>黎明小巢集體帶看 (2025-03-12)</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Noto Sans TC', Arial, sans-serif;
             margin: 20px;
             background-color: #f4f4f9;
+            font-size: 18px; /* 放大基礎字體 */
+            line-height: 1.6; /* 增加行距 */
+            color: #333;
         }
+
         h1 {
             text-align: center;
             color: #333;
+            font-size: 2.2em; /* 放大標題 */
+            margin-bottom: 30px;
         }
+
+        /* 表格容器，支援橫向滾動 */
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+
         th, td {
-            padding: 10px;
+            padding: 12px; /* 增加內邊距 */
             border: 1px solid #ddd;
             text-align: center;
+            font-size: 16px; /* 放大表格字體 */
         }
+
         th {
             background-color: #4CAF50;
             color: white;
+            font-size: 18px; /* 表頭字體更大 */
         }
+
         tr:nth-child(even) {
             background-color: #f9f9f9;
         }
+
+        /* 地號區塊 */
         .parcel-section {
             margin: 30px 0;
             padding: 20px;
@@ -40,36 +60,93 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+
         .parcel-section h2 {
             color: #4CAF50;
             border-bottom: 2px solid #4CAF50;
             padding-bottom: 5px;
+            font-size: 1.8em; /* 放大區塊標題 */
         }
+
+        .parcel-section p {
+            font-size: 16px; /* 放大段落字體 */
+        }
+
         .map-image {
             width: 100%;
-            max-width: 300px;
+            max-width: 400px; /* 限制圖片最大寬度 */
+            height: auto;
             margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
         }
+
         textarea {
             width: 100%;
-            height: 100px;
+            height: 120px; /* 增加備註框高度 */
             margin-top: 10px;
             padding: 10px;
             border: 1px solid #ddd;
             border-radius: 4px;
             resize: vertical;
+            font-size: 16px; /* 放大輸入框字體 */
         }
+
         button {
             background-color: #4CAF50;
             color: white;
-            padding: 10px 20px;
+            padding: 12px 24px; /* 增加按鈕內邊距 */
             border: none;
             border-radius: 4px;
             cursor: pointer;
             margin-top: 10px;
+            font-size: 16px; /* 放大按鈕字體 */
         }
+
         button:hover {
             background-color: #45a049;
+        }
+
+        /* 手機適配 */
+        @media (max-width: 768px) {
+            body {
+                margin: 10px;
+                font-size: 16px; /* 手機上稍微減小基礎字體 */
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            th, td {
+                padding: 8px;
+                font-size: 14px; /* 手機上表格字體稍小 */
+            }
+
+            th {
+                font-size: 16px;
+            }
+
+            .parcel-section h2 {
+                font-size: 1.5em;
+            }
+
+            .parcel-section p {
+                font-size: 14px;
+            }
+
+            .map-image {
+                max-width: 100%; /* 手機上圖片寬度自適應 */
+            }
+
+            textarea {
+                font-size: 14px;
+            }
+
+            button {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
         }
     </style>
 </head>
@@ -77,163 +154,165 @@
     <h1>宜蘭土地踩點 - 集體帶看 (2025-03-12)</h1>
 
     <!-- Summary Table -->
-    <table>
-        <thead>
-            <tr>
-                <th>順序</th>
-                <th>地址、地號</th>
-                <th>售價 (萬元)</th>
-                <th>單價 (萬元)</th>
-                <th>專任/一般</th>
-                <th>建坪</th>
-                <th>地坪</th>
-                <th>面寬 (米)</th>
-                <th>深度 (米)</th>
-                <th>現況</th>
-                <th>都市計畫</th>
-                <th>停駐路段/地標</th>
-                <th>帶看方式</th>
-                <th>接案經紀人</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>壯圍鄉新南段446地號</td>
-                <td>88</td>
-                <td>0.61</td>
-                <td>專任</td>
-                <td>-</td>
-                <td>143.39</td>
-                <td>15</td>
-                <td>50</td>
-                <td>空地</td>
-                <td>外</td>
-                <td>路邊</td>
-                <td>直接</td>
-                <td>緁締</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>宜蘭縣壯圍鄉永美路一段90巷5號 (壯東段 467地號)</td>
-                <td>880</td>
-                <td>74.58</td>
-                <td>一般</td>
-                <td>11.8</td>
-                <td>340.615</td>
-                <td>15.5</td>
-                <td>65</td>
-                <td>空屋</td>
-                <td>外</td>
-                <td>路邊</td>
-                <td>直接</td>
-                <td>其衛組</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>宜蘭縣頭城鎮新二圍段800地號</td>
-                <td>1876.938</td>
-                <td>13.8</td>
-                <td>專任</td>
-                <td>-</td>
-                <td>136.01</td>
-                <td>20.6</td>
-                <td>26.61</td>
-                <td>空地</td>
-                <td>外</td>
-                <td>路邊</td>
-                <td>直接</td>
-                <td>其衛組</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>礁溪鄉德陽段 135地號</td>
-                <td>8449</td>
-                <td>8</td>
-                <td>專任</td>
-                <td>-</td>
-                <td>1056.1606</td>
-                <td>21</td>
-                <td>160</td>
-                <td>空地</td>
-                <td>外</td>
-                <td>經過不下車</td>
-                <td>直接</td>
-                <td>其衛組</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>宜蘭市雙福段 36地號</td>
-                <td>980</td>
-                <td>4</td>
-                <td>專任</td>
-                <td>-</td>
-                <td>245.215575</td>
-                <td>18</td>
-                <td>43</td>
-                <td>空地</td>
-                <td>內</td>
-                <td>路邊</td>
-                <td>直接</td>
-                <td>其衛組</td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td>礁溪鄉開蘭三段1365地號</td>
-                <td>980</td>
-                <td>3.63</td>
-                <td>一般</td>
-                <td>-</td>
-                <td>269.7453</td>
-                <td>48</td>
-                <td>58</td>
-                <td>空地</td>
-                <td>內</td>
-                <td>路邊</td>
-                <td>直接</td>
-                <td>其衛組</td>
-            </tr>
-            <tr>
-                <td>7</td>
-                <td>員山鄉新洲子段452、453、454地號</td>
-                <td>1730</td>
-                <td>1.98</td>
-                <td>一般</td>
-                <td>-</td>
-                <td>874.685</td>
-                <td>60</td>
-                <td>50</td>
-                <td>空地</td>
-                <td>外</td>
-                <td>路邊</td>
-                <td>直接</td>
-                <td>其衛組</td>
-            </tr>
-            <tr>
-                <td>8</td>
-                <td>宜蘭市建業段270.271地號</td>
-                <td>3250</td>
-                <td>24.99</td>
-                <td>一般</td>
-                <td>-</td>
-                <td>130.03</td>
-                <td>14.1</td>
-                <td>26.2</td>
-                <td>空地</td>
-                <td>內</td>
-                <td>路邊</td>
-                <td>直接</td>
-                <td>緁締</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>順序</th>
+                    <th>地址、地號</th>
+                    <th>售價 (萬元)</th>
+                    <th>單價 (萬元)</th>
+                    <th>專任/一般</th>
+                    <th>建坪</th>
+                    <th>地坪</th>
+                    <th>面寬 (米)</th>
+                    <th>深度 (米)</th>
+                    <th>現況</th>
+                    <th>都市計畫</th>
+                    <th>停駐路段/地標</th>
+                    <th>帶看方式</th>
+                    <th>接案經紀人</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>壯圍鄉新南段446地號</td>
+                    <td>88</td>
+                    <td>0.61</td>
+                    <td>專任</td>
+                    <td>-</td>
+                    <td>143.39</td>
+                    <td>15</td>
+                    <td>50</td>
+                    <td>空地</td>
+                    <td>外</td>
+                    <td>路邊</td>
+                    <td>直接</td>
+                    <td>緁締</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>宜蘭縣壯圍鄉永美路一段90巷5號 (壯東段 467地號)</td>
+                    <td>880</td>
+                    <td>74.58</td>
+                    <td>一般</td>
+                    <td>11.8</td>
+                    <td>340.615</td>
+                    <td>15.5</td>
+                    <td>65</td>
+                    <td>空屋</td>
+                    <td>外</td>
+                    <td>路邊</td>
+                    <td>直接</td>
+                    <td>其衛組</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>宜蘭縣頭城鎮新二圍段800地號</td>
+                    <td>1876.938</td>
+                    <td>13.8</td>
+                    <td>專任</td>
+                    <td>-</td>
+                    <td>136.01</td>
+                    <td>20.6</td>
+                    <td>26.61</td>
+                    <td>空地</td>
+                    <td>外</td>
+                    <td>路邊</td>
+                    <td>直接</td>
+                    <td>其衛組</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>礁溪鄉德陽段 135地號</td>
+                    <td>8449</td>
+                    <td>8</td>
+                    <td>專任</td>
+                    <td>-</td>
+                    <td>1056.1606</td>
+                    <td>21</td>
+                    <td>160</td>
+                    <td>空地</td>
+                    <td>外</td>
+                    <td>經過不下車</td>
+                    <td>直接</td>
+                    <td>其衛組</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>宜蘭市雙福段 36地號</td>
+                    <td>980</td>
+                    <td>4</td>
+                    <td>專任</td>
+                    <td>-</td>
+                    <td>245.215575</td>
+                    <td>18</td>
+                    <td>43</td>
+                    <td>空地</td>
+                    <td>內</td>
+                    <td>路邊</td>
+                    <td>直接</td>
+                    <td>其衛組</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>礁溪鄉開蘭三段1365地號</td>
+                    <td>980</td>
+                    <td>3.63</td>
+                    <td>一般</td>
+                    <td>-</td>
+                    <td>269.7453</td>
+                    <td>48</td>
+                    <td>58</td>
+                    <td>空地</td>
+                    <td>內</td>
+                    <td>路邊</td>
+                    <td>直接</td>
+                    <td>其衛組</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>員山鄉新洲子段452、453、454地號</td>
+                    <td>1730</td>
+                    <td>1.98</td>
+                    <td>一般</td>
+                    <td>-</td>
+                    <td>874.685</td>
+                    <td>60</td>
+                    <td>50</td>
+                    <td>空地</td>
+                    <td>外</td>
+                    <td>路邊</td>
+                    <td>直接</td>
+                    <td>其衛組</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>宜蘭市建業段270.271地號</td>
+                    <td>3250</td>
+                    <td>24.99</td>
+                    <td>一般</td>
+                    <td>-</td>
+                    <td>130.03</td>
+                    <td>14.1</td>
+                    <td>26.2</td>
+                    <td>空地</td>
+                    <td>內</td>
+                    <td>路邊</td>
+                    <td>直接</td>
+                    <td>緁締</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
     <!-- Individual Parcel Sections with Maps and Notes -->
     <div class="parcel-section">
         <h2>1. 壯圍鄉新南段446地號</h2>
         <p><strong>售價:</strong> 88 萬元 | <strong>單價:</strong> 0.61 萬元 | <strong>地坪:</strong> 143.39 坪 | <strong>面寬:</strong> 15 米 | <strong>深度:</strong> 50 米</p>
         <p><strong>現況:</strong> 空地 | <strong>都市計畫:</strong> 外 | <strong>停駐路段:</strong> 路邊 | <strong>帶看方式:</strong> 直接 | <strong>接案經紀人:</strong> 緁締</p>
-        <img src="https://raw.githubusercontent.com/Larryveryhandsome/rewatch/refs/heads/main/1.jpg" alt="Map of 壯圍鄉新南段446地號" class="map-image">
+        <img src="https://raw.githubusercontent.com/Larryveryhandsome/rewatch/refs/heads/main/1.jpg" alt="Map of 壯圍鄉新南段446地號" class="map-image" loading="lazy">
         <h3>備註</h3>
         <textarea id="notes-1" placeholder="在此輸入備註..."></textarea>
         <button onclick="saveNotes(1)">儲存備註</button>
@@ -243,7 +322,7 @@
         <h2>2. 宜蘭縣壯圍鄉永美路一段90巷5號 (壯東段 467地號)</h2>
         <p><strong>售價:</strong> 880 萬元 | <strong>單價:</strong> 74.58 萬元 | <strong>建坪:</strong> 11.8 坪 | <strong>地坪:</strong> 340.615 坪 | <strong>面寬:</strong> 15.5 米 | <strong>深度:</strong> 65 米</p>
         <p><strong>現況:</strong> 空屋 | <strong>都市計畫:</strong> 外 | <strong>停駐路段:</strong> 路邊 | <strong>帶看方式:</strong> 直接 | <strong>接案經紀人:</strong> 其衛組</p>
-        <img src="https://raw.githubusercontent.com/Larryveryhandsome/rewatch/refs/heads/main/2.jpg" alt="Map of 壯東段 467地號" class="map-image">
+        <img src="https://raw.githubusercontent.com/Larryveryhandsome/rewatch/refs/heads/main/2.jpg" alt="Map of 壯東段 467地號" class="map-image" loading="lazy">
         <h3>備註</h3>
         <textarea id="notes-2" placeholder="在此輸入備註..."></textarea>
         <button onclick="saveNotes(2)">儲存備註</button>
@@ -253,7 +332,7 @@
         <h2>3. 宜蘭縣頭城鎮新二圍段800地號</h2>
         <p><strong>售價:</strong> 1876.938 萬元 | <strong>單價:</strong> 13.8 萬元 | <strong>地坪:</strong> 136.01 坪 | <strong>面寬:</strong> 20.6 米 | <strong>深度:</strong> 26.61 米</p>
         <p><strong>現況:</strong> 空地 | <strong>都市計畫:</strong> 外 | <strong>停駐路段:</strong> 路邊 | <strong>帶看方式:</strong> 直接 | <strong>接案經紀人:</strong> 其衛組</p>
-        <img src="https://raw.githubusercontent.com/Larryveryhandsome/rewatch/refs/heads/main/3.jpg" alt="Map of 新二圍段800地號" class="map-image">
+        <img src="https://raw.githubusercontent.com/Larryveryhandsome/rewatch/refs/heads/main/3.jpg" alt="Map of 新二圍段800地號" class="map-image" loading="lazy">
         <h3>備註</h3>
         <textarea id="notes-3" placeholder="在此輸入備註..."></textarea>
         <button onclick="saveNotes(3)">儲存備註</button>
@@ -263,7 +342,7 @@
         <h2>4. 礁溪鄉德陽段 135地號</h2>
         <p><strong>售價:</strong> 8449 萬元 | <strong>單價:</strong> 8 萬元 | <strong>地坪:</strong> 1056.1606 坪 | <strong>面寬:</strong> 21 米 | <strong>深度:</strong> 160 米</p>
         <p><strong>現況:</strong> 空地 | <strong>都市計畫:</strong> 外 | <strong>停駐路段:</strong> 經過不下車 | <strong>帶看方式:</strong> 直接 | <strong>接案經紀人:</strong> 其衛組</p>
-        <img src="https://raw.githubusercontent.com/Larryveryhandsome/rewatch/refs/heads/main/4.jpg" alt="Map of 德陽段 135地號" class="map-image">
+        <img src="https://raw.githubusercontent.com/Larryveryhandsome/rewatch/refs/heads/main/4.jpg" alt="Map of 德陽段 135地號" class="map-image" loading="lazy">
         <h3>備註</h3>
         <textarea id="notes-4" placeholder="在此輸入備註..."></textarea>
         <button onclick="saveNotes(4)">儲存備註</button>
@@ -273,7 +352,7 @@
         <h2>5. 宜蘭市雙福段 36地號</h2>
         <p><strong>售價:</strong> 980 萬元 | <strong>單價:</strong> 4 萬元 | <strong>地坪:</strong> 245.215575 坪 | <strong>面寬:</strong> 18 米 | <strong>深度:</strong> 40 米</p>
         <p><strong>現況:</strong> 空地 | <strong>都市計畫:</strong> 內 | <strong>停駐路段:</strong> 路邊 | <strong>帶看方式:</strong> 直接 | <strong>接案經紀人:</strong> 其衛組</p>
-        <img src="https://raw.githubusercontent.com/Larryveryhandsome/rewatch/refs/heads/main/5.jpg" alt="Map of 雙福段 36地號" class="map-image">
+        <img src="https://raw.githubusercontent.com/Larryveryhandsome/rewatch/refs/heads/main/5.jpg" alt="Map of 雙福段 36地號" class="map-image" loading="lazy">
         <h3>備註</h3>
         <textarea id="notes-5" placeholder="在此輸入備註..."></textarea>
         <button onclick="saveNotes(5)">儲存備註</button>
@@ -283,7 +362,7 @@
         <h2>6. 礁溪鄉開蘭三段1365地號</h2>
         <p><strong>售價:</strong> 980 萬元 | <strong>單價:</strong> 3.63 萬元 | <strong>地坪:</strong> 269.7453 坪 | <strong>面寬:</strong> 48 米 | <strong>深度:</strong> 58 米</p>
         <p><strong>現況:</strong> 空地 | <strong>都市計畫:</strong> 內 | <strong>停駐路段:</strong> 路邊 | <strong>帶看方式:</strong> 直接 | <strong>接案經紀人:</strong> 其衛組</p>
-        <img src="https://raw.githubusercontent.com/Larryveryhandsome/rewatch/refs/heads/main/6.jpg" alt="Map of 開蘭三段1365地號" class="map-image">
+        <img src="https://raw.githubusercontent.com/Larryveryhandsome/rewatch/refs/heads/main/6.jpg" alt="Map of 開蘭三段1365地號" class="map-image" loading="lazy">
         <h3>備註</h3>
         <textarea id="notes-6" placeholder="在此輸入備註..."></textarea>
         <button onclick="saveNotes(6)">儲存備註</button>
@@ -293,7 +372,7 @@
         <h2>7. 員山鄉新洲子段452、453、454地號</h2>
         <p><strong>售價:</strong> 1730 萬元 | <strong>單價:</strong> 1.98 萬元 | <strong>地坪:</strong> 874.685 坪 | <strong>面寬:</strong> 60 米 | <strong>深度:</strong> 50 米</p>
         <p><strong>現況:</strong> 空地 | <strong>都市計畫:</strong> 外 | <strong>停駐路段:</strong> 路邊 | <strong>帶看方式:</strong> 直接 | <strong>接案經紀人:</strong> 其衛組</p>
-        <img src="https://raw.githubusercontent.com/Larryveryhandsome/rewatch/refs/heads/main/7.jpg" alt="Map of 新洲子段452、453、454地號" class="map-image">
+        <img src="https://raw.githubusercontent.com/Larryveryhandsome/rewatch/refs/heads/main/7.jpg" alt="Map of 新洲子段452、453、454地號" class="map-image" loading="lazy">
         <h3>備註</h3>
         <textarea id="notes-7" placeholder="在此輸入備註..."></textarea>
         <button onclick="saveNotes(7)">儲存備註</button>
@@ -303,7 +382,7 @@
         <h2>8. 宜蘭市建業段270.271地號</h2>
         <p><strong>售價:</strong> 3250 萬元 | <strong>單價:</strong> 24.99 萬元 | <strong>地坪:</strong> 130.03 坪 | <strong>面寬:</strong> 14.1 米 | <strong>深度:</strong> 26.2 米</p>
         <p><strong>現況:</strong> 空地 | <strong>都市計畫:</strong> 內 | <strong>停駐路段:</strong> 路邊 | <strong>帶看方式:</strong> 直接 | <strong>接案經紀人:</strong> 緁締</p>
-        <img src="https://raw.githubusercontent.com/Larryveryhandsome/rewatch/refs/heads/main/8.jpg" alt="Map of 建業段270.271地號" class="map-image">
+        <img src="https://raw.githubusercontent.com/Larryveryhandsome/rewatch/refs/heads/main/8.jpg" alt="Map of 建業段270.271地號" class="map-image" loading="lazy">
         <h3>備註</h3>
         <textarea id="notes-8" placeholder="在此輸入備註..."></textarea>
         <button onclick="saveNotes(8)">儲存備註</button>
@@ -322,7 +401,7 @@
 
         // Save notes to localStorage
         function saveNotes(parcelNumber) {
-            let notes = document.getElementgera id(`notes-${parcelNumber}`).value;
+            let notes = document.getElementById(`notes-${parcelNumber}`).value;
             localStorage.setItem(`notes-${parcelNumber}`, notes);
             alert(`備註已儲存 (地號 ${parcelNumber})`);
         }
