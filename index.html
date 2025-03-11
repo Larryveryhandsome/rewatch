@@ -12,6 +12,7 @@
             font-size: 18px;
             line-height: 1.6;
             color: #333;
+            overflow-x: hidden; /* 防止整體頁面橫向滾動 */
         }
 
         h1 {
@@ -21,12 +22,14 @@
             margin-bottom: 30px;
         }
 
-        /* 表格容器，支援橫向滾動 */
+        /* 表格容器，支援縱向滾動並確保 sticky 生效 */
         .table-container {
             width: 100%;
-            overflow-x: auto;
-            margin: 20px 0;
-            position: relative; /* 確保子元素定位參考 */
+            overflow-x: auto; /* 橫向滾動 */
+            max-height: 400px; /* 限制表格高度，確保縱向滾動 */
+            overflow-y: auto; /* 縱向滾動 */
+            position: relative; /* 提供 sticky 參考 */
+            margin-bottom: 20px; /* 與下個區域保持距離 */
         }
 
         table {
@@ -34,6 +37,7 @@
             border-collapse: collapse;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            table-layout: fixed; /* 固定表格列寬 */
         }
 
         th, td {
@@ -41,6 +45,7 @@
             border: 1px solid #ddd;
             text-align: center;
             font-size: 16px;
+            white-space: nowrap; /* 防止文字換行 */
         }
 
         /* 凍結標題列 */
@@ -49,22 +54,22 @@
             color: white;
             font-size: 18px;
             position: sticky;
-            top: 0; /* 固定在頁面頂部 */
-            z-index: 1; /* 確保標題層級最高 */
+            top: 0; /* 固定在頂部 */
+            z-index: 100; /* 提高層級，避免被覆蓋 */
         }
 
         tr:nth-child(even) {
             background-color: #f9f9f9;
         }
 
-        /* 停止凍結的區域 */
+        /* 地號區塊 */
         .parcel-section {
             margin: 30px 0;
             padding: 20px;
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            position: relative; /* 確保區域定位 */
+            position: relative;
         }
 
         .parcel-section h2 {
@@ -152,6 +157,10 @@
             button {
                 padding: 10px 20px;
                 font-size: 14px;
+            }
+
+            .table-container {
+                max-height: 300px; /* 手機上降低高度 */
             }
         }
     </style>
